@@ -10,6 +10,9 @@ namespace BlitzPatch
     {
         static void Main(string[] args)
         {
+            Db db = new Db();
+            db.test();
+            Console.ReadKey();
         }
     }
 }

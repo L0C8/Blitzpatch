@@ -18,18 +18,13 @@ namespace BlitzPatch
                 using (var db = new LiteDatabase(filePath))
                 {
                     var collectionNames = db.GetCollectionNames();
-
-                    Console.WriteLine("Collections in the database:");
                     foreach (var name in collectionNames)
                     {
-                        Console.WriteLine($"- {name}");
                         var collection = db.GetCollection(name);
                         var documents = collection.FindAll();
-                        Console.WriteLine($"Contents of collection '{name}':");
                         foreach (var doc in documents)
                         {
-                            Console.WriteLine(doc.ToString());
-                            Console.ReadKey();
+                            
                         }
                         Console.WriteLine();
                     }

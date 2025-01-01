@@ -8,7 +8,7 @@ namespace BlitzPatch
 {
     internal class GameData
     {
-        private static readonly string[] units_ger = {  "pz_i",
+        public static readonly string[] units_ger = {  "pz_i",
                                                         "pz_ii_a",
                                                         "ww2_gr_assaultsq1_t3",
                                                         "ww2_gr_assaultsq2_t3",
@@ -118,7 +118,7 @@ namespace BlitzPatch
                                                         "ww2_gr_bomber_t5",
                                                         "ww2_gr_bomber_t7" };
 
-        private static readonly string[] units_ald = {  "mk_vi_b",
+        public static readonly string[] units_ald = {  "mk_vi_b",
                                                         "ww2_us_assaultsq1_t3",
                                                         "ww2_us_mgsq1_t3",
                                                         "ww2_us_atsq1_t3",
@@ -217,7 +217,7 @@ namespace BlitzPatch
                                                         "ww2_us_bomber_t5",
                                                         "ww2_us_bomber_t7"};
 
-        private static readonly string[] units_sov = {  "t_26",
+        public static readonly string[] units_sov = {  "t_26",
                                                         "ww2_ru_atsq1_t3",
                                                         "ww2_ru_mgsq1_t3",
                                                         "ww2_ru_assaultsq1_t3",
@@ -313,6 +313,16 @@ namespace BlitzPatch
                                                         "ww2_ru_bomber_t5",
                                                         "ww2_ru_bomber_t7"};
 
+        public static readonly string[] mission_ger = { "test", "test"};
 
+        public static readonly string[] mission_ald = { "test", "test" };
+
+        public static readonly string[] mission_sov = { "test", "test" };
+
+        public static string addUnit()
+        {
+            // test
+            return "";
+        }
     }
 }

@@ -12,6 +12,7 @@ namespace BlitzPatch
         {
             Db db = new Db();
             db.test("D:\\SteamLibrary\\steamapps\\common\\Blitzkrieg3\\Data\\User_\\a_");
+            Console.WriteLine();
             Console.ReadKey();
         }
     }

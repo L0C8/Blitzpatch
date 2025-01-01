@@ -325,4 +325,20 @@ namespace BlitzPatch
             return "";
         }
     }
+
+    class Unit
+    {
+        string Id;
+        string OwnerID;
+        int Health;
+        double HealthDelta;
+        double Exp;
+        double ExpNew;
+        int ExpLvlNew;
+        bool isUsed;
+        int UnitClass;
+        bool buffed;
+        double dealedDamage;
+
+        }
 }

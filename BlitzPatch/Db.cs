@@ -26,7 +26,12 @@ namespace BlitzPatch
 
                         foreach (var doc in documents)
                         {
-                            
+                            Console.WriteLine("Document Keys:");
+                            foreach (var key in doc.Keys)
+                            {
+                                Console.WriteLine($"- {key}");
+                            }
+                            Console.WriteLine();
                         }
                         Console.WriteLine();
                     }

@@ -75,21 +75,45 @@ namespace BlitzPatch
         {
             Unit unit = new Unit
             {
-                exp = 0.0,
+                exp = 0.1,
                 expLvl = 0,
                 id = "test",
                 idOnServer = 123,
-                unitOnMaps = new MapData
+                unitOnMaps = new UnitOnMaps
                 {
-                    Parent = -1,
-                    Pos = new Position { X = 0.0, Y = 0.0, Z = 0.0 },
-                    Angle = 0.0,
-                    Modes = 0
+                    Unknown = new MapData
+                    {
+                        Parent = -1,
+                        Pos = new Position { X = 0.0, Y = 0.0, Z = 0.0 },
+                        Angle = 0.0,
+                        Modes = 0
+                    },
+                    Early = new MapData
+                    {
+                        Parent = -1,
+                        Pos = new Position { X = 0.0, Y = 0.0, Z = 0.0 },
+                        Angle = 0.0,
+                        Modes = 0
+                    },
+                    Middle = new MapData
+                    {
+                        Parent = -1,
+                        Pos = new Position { X = 0.0, Y = 0.0, Z = 0.0 },
+                        Angle = 0.0,
+                        Modes = 0
+                    },
+                    Late = new MapData
+                    {
+                        Parent = -1,
+                        Pos = new Position { X = 0.0, Y = 0.0, Z = 0.0 },
+                        Angle = 0.0,
+                        Modes = 0
+                    }
                 }
             };
 
             string jsonString = JsonSerializer.Serialize(unit, new JsonSerializerOptions { WriteIndented = true });
-            string filePath = "test.json";
+            string filePath = "C:\\Users\\Zek\\source\\repos\\Blitzpatch\\BlitzPatch\\test.json";
             File.WriteAllText(filePath, jsonString);
             Console.WriteLine($"JSON file created at: {filePath}");
 
@@ -101,7 +125,15 @@ namespace BlitzPatch
             public int expLvl { get; set; }
             public string id { get; set; }
             public int idOnServer { get; set; }
-            public MapData unitOnMaps { get; set; }
+            public UnitOnMaps unitOnMaps { get; set; }
+        }
+
+        class UnitOnMaps
+        {
+            public MapData Unknown { get; set; } = new MapData();
+            public MapData Early { get; set; } = new MapData();
+            public MapData Middle { get; set; } = new MapData();
+            public MapData Late { get; set; } = new MapData();
         }
 
         class MapData

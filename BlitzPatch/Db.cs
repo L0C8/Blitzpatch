@@ -4,14 +4,18 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
+using System.Xml.Linq;
+using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace BlitzPatch
 {
     internal class Db
     {
-        ArrayList usedID;
+
         public void test(String path)
         {
             try
@@ -34,8 +38,9 @@ namespace BlitzPatch
 
                                 if (startIndex != -1 && endIndex != -1 && endIndex > startIndex)
                                 {
-                                    string result = dat.Substring(startIndex, endIndex - startIndex + 1);
-                                    Console.WriteLine($"Extracted Substring: {result}");
+                                    string unitData = dat.Substring(startIndex, endIndex - startIndex + 1);
+                                    ArrayList list = getUnits(unitData);
+                                    // Console.WriteLine(unitData);
                                 }
                                 else
                                 {
@@ -54,6 +59,65 @@ namespace BlitzPatch
 
         }
 
+        public ArrayList getUnits(string unitData)
+        {
+            ArrayList temp = new ArrayList();
+            string[] lines = unitData.Split('\n');
+            foreach (string line in lines)
+            {
+                Console.WriteLine(line);
+                Console.ReadKey();
+            }
+            return temp;
+        }
+
+        public void addUnit()
+        {
+            Unit unit = new Unit
+            {
+                exp = 0.0,
+                expLvl = 0,
+                id = "test",
+                idOnServer = 123,
+                unitOnMaps = new MapData
+                {
+                    Parent = -1,
+                    Pos = new Position { X = 0.0, Y = 0.0, Z = 0.0 },
+                    Angle = 0.0,
+                    Modes = 0
+                }
+            };
+
+            string jsonString = JsonSerializer.Serialize(unit, new JsonSerializerOptions { WriteIndented = true });
+            string filePath = "test.json";
+            File.WriteAllText(filePath, jsonString);
+            Console.WriteLine($"JSON file created at: {filePath}");
+
+        }
+
+        class Unit
+        {
+            public double exp { get; set; }
+            public int expLvl { get; set; }
+            public string id { get; set; }
+            public int idOnServer { get; set; }
+            public MapData unitOnMaps { get; set; }
+        }
+
+        class MapData
+        {
+            public int Parent { get; set; } = -1;
+            public Position Pos { get; set; } = new Position();
+            public double Angle { get; set; } = 0.0;
+            public int Modes { get; set; } = 0;
+        }
+
+        class Position
+        {
+            public double X { get; set; } = 0.0;
+            public double Y { get; set; } = 0.0;
+            public double Z { get; set; } = 0.0;
+        }
     }
 }
 

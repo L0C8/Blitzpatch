@@ -1,0 +1,10 @@
+C:\Users\Zek\source\repos\BlitzPatch\BlitzPatch\bin\Debug\BlitzPatch.exe.config
+C:\Users\Zek\source\repos\BlitzPatch\BlitzPatch\bin\Debug\BlitzPatch.exe
+C:\Users\Zek\source\repos\BlitzPatch\BlitzPatch\bin\Debug\BlitzPatch.pdb
+C:\Users\Zek\source\repos\BlitzPatch\BlitzPatch\bin\Debug\LiteDB.dll
+C:\Users\Zek\source\repos\BlitzPatch\BlitzPatch\obj\Debug\BlitzPatch.csproj.AssemblyReference.cache
+C:\Users\Zek\source\repos\BlitzPatch\BlitzPatch\obj\Debug\BlitzPatch.csproj.CoreCompileInputs.cache
+C:\Users\Zek\source\repos\BlitzPatch\BlitzPatch\obj\Debug\BlitzPatch.exe
+C:\Users\Zek\source\repos\BlitzPatch\BlitzPatch\obj\Debug\BlitzPatch.pdb
+C:\Users\Zek\source\repos\BlitzPatch\BlitzPatch\bin\Debug\LiteDB.xml
+C:\Users\Zek\source\repos\BlitzPatch\BlitzPatch\obj\Debug\BlitzPatch.csproj.Up2Date

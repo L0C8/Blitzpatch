@@ -15,60 +15,10 @@ namespace BlitzPatch
 {
     internal class Db
     {
-
-        public void test(String path)
+        // roughdraft, just messing around with the json stuff
+        public void viewUnits()
         {
-            try
-            {
-                using (var db = new LiteDatabase(path))
-                {
-                    var collectionNames = db.GetCollectionNames();
-                    foreach (var name in collectionNames)
-                    {
-                        var collection = db.GetCollection(name);
-                        var documents = collection.FindAll();
 
-                        foreach (var doc in documents)
-                        {
-                            if (doc.ToString().Contains("Units"))
-                            {
-                                string dat = doc.ToString();
-                                int startIndex = dat.IndexOf('[');
-                                int endIndex = dat.IndexOf(']');
-
-                                if (startIndex != -1 && endIndex != -1 && endIndex > startIndex)
-                                {
-                                    string unitData = dat.Substring(startIndex, endIndex - startIndex + 1);
-                                    ArrayList list = getUnits(unitData);
-                                    // Console.WriteLine(unitData);
-                                }
-                                else
-                                {
-                                    Console.WriteLine("No valid substring found.");
-                                }
-
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error: {ex.Message}");
-            }
-
-        }
-
-        public ArrayList getUnits(string unitData)
-        {
-            ArrayList temp = new ArrayList();
-            string[] lines = unitData.Split('\n');
-            foreach (string line in lines)
-            {
-                Console.WriteLine(line);
-                Console.ReadKey();
-            }
-            return temp;
         }
 
         public void addUnit()

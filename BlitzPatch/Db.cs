@@ -26,14 +26,24 @@ namespace BlitzPatch
 
                         foreach (var doc in documents)
                         {
-                            Console.WriteLine("Document Keys:");
-                            foreach (var key in doc.Keys)
+                            if (doc.ToString().Contains("Units"))
                             {
-                                Console.WriteLine($"- {key}");
+                                string dat = doc.ToString();
+                                int startIndex = dat.IndexOf('[');
+                                int endIndex = dat.IndexOf(']');
+
+                                if (startIndex != -1 && endIndex != -1 && endIndex > startIndex)
+                                {
+                                    string result = dat.Substring(startIndex, endIndex - startIndex + 1);
+                                    Console.WriteLine($"Extracted Substring: {result}");
+                                }
+                                else
+                                {
+                                    Console.WriteLine("No valid substring found.");
+                                }
+
                             }
-                            Console.WriteLine();
                         }
-                        Console.WriteLine();
                     }
                 }
             }
@@ -46,3 +56,4 @@ namespace BlitzPatch
 
     }
 }
+
